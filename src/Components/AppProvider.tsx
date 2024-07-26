@@ -12,8 +12,6 @@ const AppProvider: React.FC<Props> = ({ children }) => {
 	const [loading, setLoading] = useState(false);
 	const checkUser = async () => {
 		const user = await AsyncStorage.getItem("authenticated");
-		console.log("user: ", user);
-
 		setTimeout(() => {
 			if (user && user === "true") {
 				setIsAuthenticated(true);
