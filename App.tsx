@@ -1,20 +1,20 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from "@react-navigation/native";
+import { StatusBar } from "expo-status-bar";
+import { useColorScheme } from "nativewind";
+import Main from "./Main";
+import AppProvider from "./src/Components/AppProvider";
+import * as SplashScreen from "expo-splash-screen";
 
+SplashScreen.preventAutoHideAsync();
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+	const { colorScheme } = useColorScheme();
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+	return (
+		<AppProvider>
+			<NavigationContainer>
+				<StatusBar animated style={colorScheme === "dark" ? "light" : "dark"} />
+				<Main />
+			</NavigationContainer>
+		</AppProvider>
+	);
+}
