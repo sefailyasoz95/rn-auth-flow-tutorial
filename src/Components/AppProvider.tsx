@@ -19,7 +19,7 @@ const AppProvider: React.FC<Props> = ({ children }) => {
 				setIsAuthenticated(false);
 			}
 			SplashScreen.hideAsync();
-		}, 3000);
+		}, 1000);
 	};
 	const toggleIsAuthenticated = async () => {
 		setLoading(true);
