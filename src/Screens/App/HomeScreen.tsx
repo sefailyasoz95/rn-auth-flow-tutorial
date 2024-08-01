@@ -1,16 +1,14 @@
 import { FlatList, Image, SafeAreaView, Text } from "react-native";
 import React from "react";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
-import { useAppContext } from "../../Hooks/useAppContext";
 import { AppStackParams } from "../../Utils/types";
 import { Books } from "../../Utils/DummyData";
 import { DEVICE_HEIGHT, DEVICE_WIDTH } from "../../Utils/constants";
-import Animated, { FadeInDown, FadeInLeft } from "react-native-reanimated";
+import Animated, { FadeInDown } from "react-native-reanimated";
 
 type Props = NativeStackScreenProps<AppStackParams, "HomeScreen">;
 
 const HomeScreen = ({ navigation, route }: Props) => {
-	const { toggleIsAuthenticated, loading } = useAppContext();
 	return (
 		<SafeAreaView className='bg-slate-200 dark:bg-slate-950 flex-1'>
 			<Text className='text-slate-900 dark:text-slate-200 text-5xl font-semibold text-center'>
